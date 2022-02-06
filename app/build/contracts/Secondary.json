@@ -57,7 +57,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/**\n * @dev A Secondary contract can only be used by its primary account (the one that created it).\n */\ncontract Secondary {\n    address private _primary;\n\n    /**\n     * @dev Emitted when the primary contract changes.\n     */\n    event PrimaryTransferred(\n        address recipient\n    );\n\n    /**\n     * @dev Sets the primary account to the one that is creating the Secondary contract.\n     */\n    constructor () internal {\n        _primary = msg.sender;\n        emit PrimaryTransferred(_primary);\n    }\n\n    /**\n     * @dev Reverts if called from any account other than the primary.\n     */\n    modifier onlyPrimary() {\n        require(msg.sender == _primary, \"Secondary: caller is not the primary account\");\n        _;\n    }\n\n    /**\n     * @return the address of the primary.\n     */\n    function primary() public view returns (address) {\n        return _primary;\n    }\n\n    /**\n     * @dev Transfers contract to a new primary.\n     * @param recipient The address of new primary.\n     */\n    function transferPrimary(address recipient) public onlyPrimary {\n        require(recipient != address(0), \"Secondary: new primary is the zero address\");\n        _primary = recipient;\n        emit PrimaryTransferred(_primary);\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/ownership/Secondary.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/ownership/Secondary.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/ownership/Secondary.sol",
     "exportedSymbols": {
@@ -199,7 +199,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10807,
+                        "referencedDeclaration": 10808,
                         "src": "470:3:41",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -340,7 +340,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10807,
+                            "referencedDeclaration": 10808,
                             "src": "664:3:41",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -416,10 +416,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "656:7:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -676,10 +676,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "1095:7:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1086,7 +1086,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1229,10 +1229,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1273,7 +1273,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10807,
+                                      "referencedDeclaration": 10808,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -1558,10 +1558,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1823,7 +1823,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.880Z",
+  "updatedAt": "2022-02-06T00:33:10.725Z",
   "devdoc": {
     "details": "A Secondary contract can only be used by its primary account (the one that created it).",
     "methods": {

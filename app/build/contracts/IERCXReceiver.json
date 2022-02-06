@@ -49,7 +49,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/**\n * @title ERCX token receiver interface\n * @dev Interface for any contract that wants to support safeTransfers\n * from ERCX asset contracts.\n */\ncontract IERCXReceiver {\n    /**\n    * @notice Handle the receipt of an NFT\n    * @dev The ERCX smart contract calls this function on the recipient\n    * after a {IERCX-safeTransferFrom}. This function MUST return the function selector,\n    * otherwise the caller will revert the transaction. The selector to be\n    * returned can be obtained as `this.onERCXReceived.selector`. This\n    * function MAY throw to revert and reject the transfer.\n    * Note: the ERCX contract address is always the message sender.\n    * @param operator The address which called `safeTransferFrom` function\n    * @param from The address which previously owned the token\n    * @param itemId The NFT identifier which is being transferred\n    * @param data Additional data with no specified format\n    * @return bytes4 `bytes4(keccak256(\"onERCXReceived(address,address,uint256,uint256,bytes)\"))`\n    */\n    function onERCXReceived(\n        address operator,\n        address from,\n        uint256 itemId,\n        uint256 layer,\n        bytes memory data\n    ) public returns (bytes4);\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Interface/IERCXReceiver.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Interface/IERCXReceiver.sol",
   "ast": {
     "absolutePath": "project:/contracts/ERCX/Interface/IERCXReceiver.sol",
     "exportedSymbols": {
@@ -529,7 +529,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.663Z",
+  "updatedAt": "2022-02-06T00:33:10.671Z",
   "devdoc": {
     "details": "Interface for any contract that wants to support safeTransfers from ERCX asset contracts.",
     "methods": {

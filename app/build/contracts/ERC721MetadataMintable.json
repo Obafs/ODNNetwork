@@ -466,7 +466,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./ERC721Metadata.sol\";\nimport \"../../access/roles/MinterRole.sol\";\n\n\n/**\n * @title ERC721MetadataMintable\n * @dev ERC721 minting logic with metadata.\n */\ncontract ERC721MetadataMintable is ERC721, ERC721Metadata, MinterRole {\n    /**\n     * @dev Function to mint tokens.\n     * @param to The address that will receive the minted tokens.\n     * @param tokenId The token id to mint.\n     * @param tokenURI The token URI of the minted token.\n     * @return A boolean that indicates if the operation was successful.\n     */\n    function mintWithTokenURI(address to, uint256 tokenId, string memory tokenURI) public onlyMinter returns (bool) {\n        _mint(to, tokenId);\n        _setTokenURI(tokenId, tokenURI);\n        return true;\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC721/ERC721MetadataMintable.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC721/ERC721MetadataMintable.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/token/ERC721/ERC721MetadataMintable.sol",
     "exportedSymbols": {
@@ -1437,7 +1437,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:34.070Z",
+  "updatedAt": "2022-02-06T00:33:10.770Z",
   "devdoc": {
     "details": "ERC721 minting logic with metadata.",
     "methods": {

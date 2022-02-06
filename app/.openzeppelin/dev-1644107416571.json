@@ -1,0 +1,14 @@
+{
+  "contracts": {},
+  "solidityLibs": {},
+  "proxies": {
+    "app/tokenFactory": [
+      {
+        "address": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+        "kind": "NonProxy",
+        "bytecodeHash": "21bbbd87d85ffb69888b0c14d4c5cc6f6d51f59120a8162f69f811147a21b472"
+      }
+    ]
+  },
+  "manifestVersion": "2.2"
+}

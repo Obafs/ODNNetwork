@@ -12,7 +12,9 @@ class tokenFactory {
     try {
       const accounts = await web3.eth.getAccounts();
       const val = await web3.utils.toHex(amount);
-      const trans = await instance.methods.transferODN(tkn, to, val).send({ from: accounts[0] });
+      const trans = await instance.methods
+        .transferODN(tkn, to, val)
+        .send({ from: accounts[0] });
       return trans;
     } catch (error) {
       console.log(error);
@@ -22,8 +24,9 @@ class tokenFactory {
   //get balance
   async balance(tkn, owner) {
     try {
-      const accounts = await web3.eth.getAccounts();
-      const bals = await instance.methods.balODN(tkn, owner).send({ from: accounts[0] });
+      // const accounts = await web3.eth.getAccounts();
+      const bals = await instance.methods.balODN(tkn, owner).call();
+      // .send({ from: accounts[0] });
       return bals;
     } catch (error) {
       console.error(error);
@@ -32,10 +35,9 @@ class tokenFactory {
 
   async listToken() {
     try {
-      const accounts = await web3.eth.getAccounts();
-      const listT = await instance.methods
-        .listTokens()
-        .send({ from: accounts[0] });
+      // const accounts = await web3.eth.getAccounts();
+      const listT = await instance.methods.listTokens().call();
+      // .send({ from: accounts[0] });
       return listT;
     } catch (error) {
       console.error(error);

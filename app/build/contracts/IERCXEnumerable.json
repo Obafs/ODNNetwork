@@ -848,7 +848,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./IERCX.sol\";\n\ncontract IERCXEnumerable is IERCX {\n    function totalNumberOfItems() public view returns (uint256);\n    function itemOfUserByIndex(address owner, uint256 index)\n        public\n        view\n        returns (uint256 itemId);\n    function itemOfOwnerByIndex(address owner, uint256 index)\n        public\n        view\n        returns (uint256 itemId);\n    function itemByIndex(uint256 index) public view returns (uint256);\n\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Interface/IERCXEnumerable.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Interface/IERCXEnumerable.sol",
   "ast": {
     "absolutePath": "project:/contracts/ERCX/Interface/IERCXEnumerable.sol",
     "exportedSymbols": {
@@ -1753,7 +1753,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.659Z",
+  "updatedAt": "2022-02-06T00:33:10.668Z",
   "devdoc": {
     "methods": {
       "supportsInterface(bytes4)": {

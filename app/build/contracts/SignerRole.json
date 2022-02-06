@@ -85,7 +85,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"../Roles.sol\";\n\ncontract SignerRole {\n    using Roles for Roles.Role;\n\n    event SignerAdded(address indexed account);\n    event SignerRemoved(address indexed account);\n\n    Roles.Role private _signers;\n\n    constructor () internal {\n        _addSigner(msg.sender);\n    }\n\n    modifier onlySigner() {\n        require(isSigner(msg.sender), \"SignerRole: caller does not have the Signer role\");\n        _;\n    }\n\n    function isSigner(address account) public view returns (bool) {\n        return _signers.has(account);\n    }\n\n    function addSigner(address account) public onlySigner {\n        _addSigner(account);\n    }\n\n    function renounceSigner() public {\n        _removeSigner(msg.sender);\n    }\n\n    function _addSigner(address account) internal {\n        _signers.add(account);\n        emit SignerAdded(account);\n    }\n\n    function _removeSigner(address account) internal {\n        _signers.remove(account);\n        emit SignerRemoved(account);\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/access/roles/SignerRole.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/access/roles/SignerRole.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/access/roles/SignerRole.sol",
     "exportedSymbols": {
@@ -292,7 +292,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "286:3:19",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -398,7 +398,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 10807,
+                              "referencedDeclaration": 10808,
                               "src": "359:3:19",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -486,10 +486,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "342:7:19",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -846,7 +846,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "713:3:19",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1609,7 +1609,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1692,10 +1692,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1755,7 +1755,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10807,
+                                      "referencedDeclaration": 10808,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2238,7 +2238,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2707,7 +2707,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.723Z",
+  "updatedAt": "2022-02-06T00:33:10.685Z",
   "devdoc": {
     "methods": {}
   },

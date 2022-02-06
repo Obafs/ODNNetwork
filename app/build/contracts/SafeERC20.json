@@ -7,7 +7,7 @@
   "sourceMap": "574:3144:54:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "574:3144:54:-;;;;;;;;",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./IERC20.sol\";\nimport \"../../math/SafeMath.sol\";\nimport \"../../utils/Address.sol\";\n\n/**\n * @title SafeERC20\n * @dev Wrappers around ERC20 operations that throw on failure (when the token\n * contract returns false). Tokens that return no value (and instead revert or\n * throw on failure) are also supported, non-reverting calls are assumed to be\n * successful.\n * To use this library you can add a `using SafeERC20 for ERC20;` statement to your contract,\n * which allows you to call the safe operations as `token.safeTransfer(...)`, etc.\n */\nlibrary SafeERC20 {\n    using SafeMath for uint256;\n    using Address for address;\n\n    function safeTransfer(IERC20 token, address to, uint256 value) internal {\n        callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));\n    }\n\n    function safeTransferFrom(IERC20 token, address from, address to, uint256 value) internal {\n        callOptionalReturn(token, abi.encodeWithSelector(token.transferFrom.selector, from, to, value));\n    }\n\n    function safeApprove(IERC20 token, address spender, uint256 value) internal {\n        // safeApprove should only be called when setting an initial allowance,\n        // or when resetting it to zero. To increase and decrease it, use\n        // 'safeIncreaseAllowance' and 'safeDecreaseAllowance'\n        // solhint-disable-next-line max-line-length\n        require((value == 0) || (token.allowance(address(this), spender) == 0),\n            \"SafeERC20: approve from non-zero to non-zero allowance\"\n        );\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));\n    }\n\n    function safeIncreaseAllowance(IERC20 token, address spender, uint256 value) internal {\n        uint256 newAllowance = token.allowance(address(this), spender).add(value);\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));\n    }\n\n    function safeDecreaseAllowance(IERC20 token, address spender, uint256 value) internal {\n        uint256 newAllowance = token.allowance(address(this), spender).sub(value);\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));\n    }\n\n    /**\n     * @dev Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement\n     * on the return value: the return value is optional (but if data is returned, it must not be false).\n     * @param token The token targeted by the call.\n     * @param data The call data (encoded using abi.encode or one of its variants).\n     */\n    function callOptionalReturn(IERC20 token, bytes memory data) private {\n        // We need to perform a low level call here, to bypass Solidity's return data size checking mechanism, since\n        // we're implementing it ourselves.\n\n        // A Solidity high level call has three parts:\n        //  1. The target address is checked to verify it contains contract code\n        //  2. The call itself is made, and success asserted\n        //  3. The return value is decoded, which in turn checks the size of the returned data.\n        // solhint-disable-next-line max-line-length\n        require(address(token).isContract(), \"SafeERC20: call to non-contract\");\n\n        // solhint-disable-next-line avoid-low-level-calls\n        (bool success, bytes memory returndata) = address(token).call(data);\n        require(success, \"SafeERC20: low-level call failed\");\n\n        if (returndata.length > 0) { // Return data is optional\n            // solhint-disable-next-line max-line-length\n            require(abi.decode(returndata, (bool)), \"SafeERC20: ERC20 operation did not succeed\");\n        }\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC20/SafeERC20.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC20/SafeERC20.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/token/ERC20/SafeERC20.sol",
     "exportedSymbols": {
@@ -249,7 +249,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10794,
+                            "referencedDeclaration": 10795,
                             "src": "770:3:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -570,7 +570,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10794,
+                            "referencedDeclaration": 10795,
                             "src": "968:3:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -898,7 +898,7 @@
                                         "name": "this",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 10891,
+                                        "referencedDeclaration": 10892,
                                         "src": "1455:4:54",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_contract$_SafeERC20_$7789",
@@ -1086,10 +1086,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "1406:7:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1227,7 +1227,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10794,
+                            "referencedDeclaration": 10795,
                             "src": "1592:3:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -1487,7 +1487,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 10891,
+                                "referencedDeclaration": 10892,
                                 "src": "1811:4:54",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_SafeERC20_$7789",
@@ -1739,7 +1739,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10794,
+                            "referencedDeclaration": 10795,
                             "src": "1873:3:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -1999,7 +1999,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 10891,
+                                "referencedDeclaration": 10892,
                                 "src": "2099:4:54",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_SafeERC20_$7789",
@@ -2251,7 +2251,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10794,
+                            "referencedDeclaration": 10795,
                             "src": "2161:3:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -2564,10 +2564,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "3208:7:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2809,10 +2809,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "3426:7:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2983,7 +2983,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 10794,
+                                  "referencedDeclaration": 10795,
                                   "src": "3622:3:54",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -3052,10 +3052,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              10810,
-                              10811
+                              10811,
+                              10812
                             ],
-                            "referencedDeclaration": 10811,
+                            "referencedDeclaration": 10812,
                             "src": "3614:7:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3530,7 +3530,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10794,
+                                      "referencedDeclaration": 10795,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -3892,7 +3892,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10794,
+                                      "referencedDeclaration": 10795,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -4167,10 +4167,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -4381,7 +4381,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 10891,
+                                                  "referencedDeclaration": 10892,
                                                   "type": "library SafeERC20",
                                                   "value": "this"
                                                 },
@@ -4572,7 +4572,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10794,
+                                      "referencedDeclaration": 10795,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -4963,7 +4963,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 10891,
+                                          "referencedDeclaration": 10892,
                                           "type": "library SafeERC20",
                                           "value": "this"
                                         },
@@ -5124,7 +5124,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10794,
+                                      "referencedDeclaration": 10795,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -5515,7 +5515,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 10891,
+                                          "referencedDeclaration": 10892,
                                           "type": "library SafeERC20",
                                           "value": "this"
                                         },
@@ -5676,7 +5676,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10794,
+                                      "referencedDeclaration": 10795,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -5910,10 +5910,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -6247,10 +6247,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -6404,10 +6404,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        10810,
-                                        10811
+                                        10811,
+                                        10812
                                       ],
-                                      "referencedDeclaration": 10811,
+                                      "referencedDeclaration": 10812,
                                       "type": "function (bool,string memory) pure",
                                       "value": "require"
                                     },
@@ -6457,7 +6457,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 10794,
+                                              "referencedDeclaration": 10795,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -6582,7 +6582,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.962Z",
+  "updatedAt": "2022-02-06T00:33:10.750Z",
   "devdoc": {
     "details": "Wrappers around ERC20 operations that throw on failure (when the token contract returns false). Tokens that return no value (and instead revert or throw on failure) are also supported, non-reverting calls are assumed to be successful. To use this library you can add a `using SafeERC20 for ERC20;` statement to your contract, which allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
     "methods": {},

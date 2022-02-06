@@ -32,14 +32,15 @@ contract tokenFactory {
         tokens.transferOD(to,amount);
     }
 
-    function balODN (ODNERC20 tkn ,address owner) view external {
+    function balODN (ODNERC20 tkn ,address owner) view external returns(uint256) {
         ODNERC20 tokens = tkn;
         uint256 bal = tokens.balanceOf(owner);
-        emit balz(bal);
+        return bal;
+        // emit balz(bal);
     }
 
-    function listTokens () external {
-        emit listT(tokenAddress);
+    function listTokens () view external returns (address[]memory) {
+        return tokenAddress;
     }
 
 }

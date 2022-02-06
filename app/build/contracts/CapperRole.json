@@ -85,7 +85,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"../Roles.sol\";\n\ncontract CapperRole {\n    using Roles for Roles.Role;\n\n    event CapperAdded(address indexed account);\n    event CapperRemoved(address indexed account);\n\n    Roles.Role private _cappers;\n\n    constructor () internal {\n        _addCapper(msg.sender);\n    }\n\n    modifier onlyCapper() {\n        require(isCapper(msg.sender), \"CapperRole: caller does not have the Capper role\");\n        _;\n    }\n\n    function isCapper(address account) public view returns (bool) {\n        return _cappers.has(account);\n    }\n\n    function addCapper(address account) public onlyCapper {\n        _addCapper(account);\n    }\n\n    function renounceCapper() public {\n        _removeCapper(msg.sender);\n    }\n\n    function _addCapper(address account) internal {\n        _cappers.add(account);\n        emit CapperAdded(account);\n    }\n\n    function _removeCapper(address account) internal {\n        _cappers.remove(account);\n        emit CapperRemoved(account);\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/access/roles/CapperRole.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/access/roles/CapperRole.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/access/roles/CapperRole.sol",
     "exportedSymbols": {
@@ -292,7 +292,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "286:3:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -398,7 +398,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 10807,
+                              "referencedDeclaration": 10808,
                               "src": "359:3:16",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -486,10 +486,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "342:7:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -846,7 +846,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "713:3:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1609,7 +1609,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1692,10 +1692,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1755,7 +1755,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 10807,
+                                      "referencedDeclaration": 10808,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2238,7 +2238,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2707,7 +2707,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.706Z",
+  "updatedAt": "2022-02-06T00:33:10.681Z",
   "devdoc": {
     "methods": {}
   },

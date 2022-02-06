@@ -1,0 +1,29 @@
+{
+  "contracts": {},
+  "solidityLibs": {},
+  "proxies": {
+    "app/tokenFactory": [
+      {
+        "address": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+        "kind": "NonProxy",
+        "bytecodeHash": "7613deff1bafc476ec4194dc4df2102b0e6e1b9aa4adccc106e6be2afde809a3"
+      },
+      {
+        "address": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e",
+        "kind": "NonProxy",
+        "bytecodeHash": "61a1658c55fb53859bab5505d514eca25cc707f250d8e1cf8a224c4d7ff47e47"
+      },
+      {
+        "address": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "kind": "NonProxy",
+        "bytecodeHash": "21bbbd87d85ffb69888b0c14d4c5cc6f6d51f59120a8162f69f811147a21b472"
+      },
+      {
+        "address": "0x7C728214be9A0049e6a86f2137ec61030D0AA964",
+        "kind": "NonProxy",
+        "bytecodeHash": "21bbbd87d85ffb69888b0c14d4c5cc6f6d51f59120a8162f69f811147a21b472"
+      }
+    ]
+  },
+  "manifestVersion": "2.2"
+}

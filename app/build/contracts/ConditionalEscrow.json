@@ -161,7 +161,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./Escrow.sol\";\n\n/**\n * @title ConditionalEscrow\n * @dev Base abstract escrow to only allow withdrawal if a condition is met.\n * @dev Intended usage: See Escrow.sol. Same usage guidelines apply here.\n */\ncontract ConditionalEscrow is Escrow {\n    /**\n     * @dev Returns whether an address is allowed to withdraw their funds. To be\n     * implemented by derived contracts.\n     * @param payee The destination address of the funds.\n     */\n    function withdrawalAllowed(address payee) public view returns (bool);\n\n    function withdraw(address payable payee) public {\n        require(withdrawalAllowed(payee), \"ConditionalEscrow: payee is not allowed to withdraw\");\n        super.withdraw(payee);\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/payment/escrow/ConditionalEscrow.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/payment/escrow/ConditionalEscrow.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/payment/escrow/ConditionalEscrow.sol",
     "exportedSymbols": {
@@ -406,10 +406,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "608:7:44",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -465,7 +465,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10928,
+                        "referencedDeclaration": 10929,
                         "src": "706:5:44",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_ConditionalEscrow_$6572",
@@ -825,10 +825,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -956,7 +956,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10928,
+                                  "referencedDeclaration": 10929,
                                   "type": "contract super ConditionalEscrow",
                                   "value": "super"
                                 },
@@ -1019,7 +1019,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.899Z",
+  "updatedAt": "2022-02-06T00:33:10.733Z",
   "devdoc": {
     "details": "Base abstract escrow to only allow withdrawal if a condition is met.Intended usage: See Escrow.sol. Same usage guidelines apply here.",
     "methods": {

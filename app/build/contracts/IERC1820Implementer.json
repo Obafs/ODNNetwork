@@ -34,7 +34,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/**\n * @dev Interface for an ERC1820 implementer, as defined in the\n * [EIP](https://eips.ethereum.org/EIPS/eip-1820#interface-implementation-erc1820implementerinterface).\n * Used by contracts that will be registered as implementers in the\n * `IERC1820Registry`.\n */\ninterface IERC1820Implementer {\n    /**\n     * @dev Returns a special value (`ERC1820_ACCEPT_MAGIC`) if this contract\n     * implements `interfaceHash` for `account`.\n     *\n     * See `IERC1820Registry.setInterfaceImplementer`.\n     */\n    function canImplementInterfaceForAddress(bytes32 interfaceHash, address account) external view returns (bytes32);\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/introspection/IERC1820Implementer.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/introspection/IERC1820Implementer.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/introspection/IERC1820Implementer.sol",
     "exportedSymbols": {
@@ -356,7 +356,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.848Z",
+  "updatedAt": "2022-02-06T00:33:10.718Z",
   "devdoc": {
     "details": "Interface for an ERC1820 implementer, as defined in the [EIP](https://eips.ethereum.org/EIPS/eip-1820#interface-implementation-erc1820implementerinterface). Used by contracts that will be registered as implementers in the `IERC1820Registry`.",
     "methods": {

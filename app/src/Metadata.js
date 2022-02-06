@@ -1,4 +1,4 @@
-const ADDRESS = "0x28B6D35Fb41Ff499b4058d2c7F99Ce418720184C";
+const ADDRESS = "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab";
 const ABI = [
   {
     anonymous: false,
@@ -61,25 +61,25 @@ const ABI = [
     signature: "0x54156248",
   },
   {
-    constant: false,
+    constant: true,
     inputs: [
       { internalType: "contract ODNERC20", name: "tkn", type: "address" },
       { internalType: "address", name: "owner", type: "address" },
     ],
     name: "balODN",
-    outputs: [],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     payable: false,
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
     signature: "0x9848ffc1",
   },
   {
-    constant: false,
+    constant: true,
     inputs: [],
     name: "listTokens",
-    outputs: [],
+    outputs: [{ internalType: "address[]", name: "", type: "address[]" }],
     payable: false,
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
     signature: "0x7488ff76",
   },

@@ -1121,7 +1121,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./ERCXFull.sol\";\n\n/**\n * @title ERC721 Burnable Token\n * @dev ERC721 Token that can be irreversibly burned (destroyed).\n */\ncontract ERCXBurnable is ERCXFull {\n  /**\n    * @dev Burns a specific ERCX item.\n    * @param itemId uint256 id of the ERCXFull item to be burned.\n    */\n  function burn(uint256 itemId) public {\n      _burn(itemId);\n  }\n}",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Contract/ERCXBurnable.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Contract/ERCXBurnable.sol",
   "ast": {
     "absolutePath": "project:/contracts/ERCX/Contract/ERCXBurnable.sol",
     "exportedSymbols": {
@@ -1575,7 +1575,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.585Z",
+  "updatedAt": "2022-02-06T00:33:10.651Z",
   "devdoc": {
     "details": "ERC721 Token that can be irreversibly burned (destroyed).",
     "methods": {

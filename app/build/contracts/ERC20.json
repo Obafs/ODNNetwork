@@ -255,7 +255,7 @@
   "sourceMap": "1232:6577:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1232:6577:47;;;;;;;",
   "deployedSourceMap": "1232:6577:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1232:6577:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2452:145;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2452:145:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1514:89;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3054:252;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3054:252:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;3701:203;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3701:203:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1661:108;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1661:108:47;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;4391:213;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4391:213:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1972:152;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1972:152:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;2182:132;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2182:132:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2452:145;2517:4;2533:36;2542:10;2554:7;2563:5;2533:8;:36::i;:::-;2586:4;2579:11;;2452:145;;;;:::o;1514:89::-;1558:7;1584:12;;1577:19;;1514:89;:::o;3054:252::-;3143:4;3159:36;3169:6;3177:9;3188:6;3159:9;:36::i;:::-;3205:73;3214:6;3222:10;3234:43;3270:6;3234:11;:19;3246:6;3234:19;;;;;;;;;;;;;;;:31;3254:10;3234:31;;;;;;;;;;;;;;;;:35;;:43;;;;:::i;:::-;3205:8;:73::i;:::-;3295:4;3288:11;;3054:252;;;;;:::o;3701:203::-;3781:4;3797:79;3806:10;3818:7;3827:48;3864:10;3827:11;:23;3839:10;3827:23;;;;;;;;;;;;;;;:32;3851:7;3827:32;;;;;;;;;;;;;;;;:36;;:48;;;;:::i;:::-;3797:8;:79::i;:::-;3893:4;3886:11;;3701:203;;;;:::o;1661:108::-;1718:7;1744:9;:18;1754:7;1744:18;;;;;;;;;;;;;;;;1737:25;;1661:108;;;:::o;4391:213::-;4476:4;4492:84;4501:10;4513:7;4522:53;4559:15;4522:11;:23;4534:10;4522:23;;;;;;;;;;;;;;;:32;4546:7;4522:32;;;;;;;;;;;;;;;;:36;;:53;;;;:::i;:::-;4492:8;:84::i;:::-;4593:4;4586:11;;4391:213;;;;:::o;1972:152::-;2041:4;2057:39;2067:9;2078;2089:6;2057:9;:39::i;:::-;2113:4;2106:11;;1972:152;;;;:::o;2182:132::-;2254:7;2280:11;:18;2292:5;2280:18;;;;;;;;;;;;;;;:27;2299:7;2280:27;;;;;;;;;;;;;;;;2273:34;;2182:132;;;;:::o;7116:329::-;7225:1;7208:19;;:5;:19;;;;7200:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7305:1;7286:21;;:7;:21;;;;7278:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7387:5;7357:11;:18;7369:5;7357:18;;;;;;;;;;;;;;;:27;7376:7;7357:27;;;;;;;;;;;;;;;:35;;;;7423:7;7407:31;;7416:5;7407:31;;;7432:5;7407:31;;;;;;;;;;;;;;;;;;7116:329;;;:::o;5078:422::-;5193:1;5175:20;;:6;:20;;;;5167:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5276:1;5255:23;;:9;:23;;;;5247:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5349:29;5371:6;5349:9;:17;5359:6;5349:17;;;;;;;;;;;;;;;;:21;;:29;;;;:::i;:::-;5329:9;:17;5339:6;5329:17;;;;;;;;;;;;;;;:49;;;;5411:32;5436:6;5411:9;:20;5421:9;5411:20;;;;;;;;;;;;;;;;:24;;:32;;;;:::i;:::-;5388:9;:20;5398:9;5388:20;;;;;;;;;;;;;;;:55;;;;5475:9;5458:35;;5467:6;5458:35;;;5486:6;5458:35;;;;;;;;;;;;;;;;;;5078:422;;;:::o;1274:179:39:-;1332:7;1364:1;1359;:6;;1351:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1410:9;1426:1;1422;:5;1410:17;;1445:1;1438:8;;;1274:179;;;;:::o;834:176::-;892:7;911:9;927:1;923;:5;911:17;;951:1;946;:6;;938:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1002:1;995:8;;;834:176;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./IERC20.sol\";\nimport \"../../math/SafeMath.sol\";\n\n/**\n * @dev Implementation of the `IERC20` interface.\n *\n * This implementation is agnostic to the way tokens are created. This means\n * that a supply mechanism has to be added in a derived contract using `_mint`.\n * For a generic mechanism see `ERC20Mintable`.\n *\n * *For a detailed writeup see our guide [How to implement supply\n * mechanisms](https://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226).*\n *\n * We have followed general OpenZeppelin guidelines: functions revert instead\n * of returning `false` on failure. This behavior is nonetheless conventional\n * and does not conflict with the expectations of ERC20 applications.\n *\n * Additionally, an `Approval` event is emitted on calls to `transferFrom`.\n * This allows applications to reconstruct the allowance for all accounts just\n * by listening to said events. Other implementations of the EIP may not emit\n * these events, as it isn't required by the specification.\n *\n * Finally, the non-standard `decreaseAllowance` and `increaseAllowance`\n * functions have been added to mitigate the well-known issues around setting\n * allowances. See `IERC20.approve`.\n */\ncontract ERC20 is IERC20 {\n    using SafeMath for uint256;\n\n    mapping (address => uint256) private _balances;\n\n    mapping (address => mapping (address => uint256)) private _allowances;\n\n    uint256 private _totalSupply;\n\n    /**\n     * @dev See `IERC20.totalSupply`.\n     */\n    function totalSupply() public view returns (uint256) {\n        return _totalSupply;\n    }\n\n    /**\n     * @dev See `IERC20.balanceOf`.\n     */\n    function balanceOf(address account) public view returns (uint256) {\n        return _balances[account];\n    }\n\n    /**\n     * @dev See `IERC20.transfer`.\n     *\n     * Requirements:\n     *\n     * - `recipient` cannot be the zero address.\n     * - the caller must have a balance of at least `amount`.\n     */\n    function transfer(address recipient, uint256 amount) public returns (bool) {\n        _transfer(tx.origin, recipient, amount);\n        return true;\n    }\n\n    /**\n     * @dev See `IERC20.allowance`.\n     */\n    function allowance(address owner, address spender) public view returns (uint256) {\n        return _allowances[owner][spender];\n    }\n\n    /**\n     * @dev See `IERC20.approve`.\n     *\n     * Requirements:\n     *\n     * - `spender` cannot be the zero address.\n     */\n    function approve(address spender, uint256 value) public returns (bool) {\n        _approve(msg.sender, spender, value);\n        return true;\n    }\n\n    /**\n     * @dev See `IERC20.transferFrom`.\n     *\n     * Emits an `Approval` event indicating the updated allowance. This is not\n     * required by the EIP. See the note at the beginning of `ERC20`;\n     *\n     * Requirements:\n     * - `sender` and `recipient` cannot be the zero address.\n     * - `sender` must have a balance of at least `value`.\n     * - the caller must have allowance for `sender`'s tokens of at least\n     * `amount`.\n     */\n    function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {\n        _transfer(sender, recipient, amount);\n        _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));\n        return true;\n    }\n\n    /**\n     * @dev Atomically increases the allowance granted to `spender` by the caller.\n     *\n     * This is an alternative to `approve` that can be used as a mitigation for\n     * problems described in `IERC20.approve`.\n     *\n     * Emits an `Approval` event indicating the updated allowance.\n     *\n     * Requirements:\n     *\n     * - `spender` cannot be the zero address.\n     */\n    function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {\n        _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));\n        return true;\n    }\n\n    /**\n     * @dev Atomically decreases the allowance granted to `spender` by the caller.\n     *\n     * This is an alternative to `approve` that can be used as a mitigation for\n     * problems described in `IERC20.approve`.\n     *\n     * Emits an `Approval` event indicating the updated allowance.\n     *\n     * Requirements:\n     *\n     * - `spender` cannot be the zero address.\n     * - `spender` must have allowance for the caller of at least\n     * `subtractedValue`.\n     */\n    function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {\n        _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));\n        return true;\n    }\n\n    /**\n     * @dev Moves tokens `amount` from `sender` to `recipient`.\n     *\n     * This is internal function is equivalent to `transfer`, and can be used to\n     * e.g. implement automatic token fees, slashing mechanisms, etc.\n     *\n     * Emits a `Transfer` event.\n     *\n     * Requirements:\n     *\n     * - `sender` cannot be the zero address.\n     * - `recipient` cannot be the zero address.\n     * - `sender` must have a balance of at least `amount`.\n     */\n    function _transfer(address sender, address recipient, uint256 amount) internal {\n        require(sender != address(0), \"ERC20: transfer from the zero address\");\n        require(recipient != address(0), \"ERC20: transfer to the zero address\");\n\n        _balances[sender] = _balances[sender].sub(amount);\n        _balances[recipient] = _balances[recipient].add(amount);\n        emit Transfer(sender, recipient, amount);\n    }\n\n    /** @dev Creates `amount` tokens and assigns them to `account`, increasing\n     * the total supply.\n     *\n     * Emits a `Transfer` event with `from` set to the zero address.\n     *\n     * Requirements\n     *\n     * - `to` cannot be the zero address.\n     */\n    function _mint(address account, uint256 amount) internal {\n        require(account != address(0), \"ERC20: mint to the zero address\");\n\n        _totalSupply = _totalSupply.add(amount);\n        _balances[account] = _balances[account].add(amount);\n        emit Transfer(address(0), account, amount);\n    }\n\n     /**\n     * @dev Destoys `amount` tokens from `account`, reducing the\n     * total supply.\n     *\n     * Emits a `Transfer` event with `to` set to the zero address.\n     *\n     * Requirements\n     *\n     * - `account` cannot be the zero address.\n     * - `account` must have at least `amount` tokens.\n     */\n    function _burn(address account, uint256 value) internal {\n        require(account != address(0), \"ERC20: burn from the zero address\");\n\n        _totalSupply = _totalSupply.sub(value);\n        _balances[account] = _balances[account].sub(value);\n        emit Transfer(account, address(0), value);\n    }\n\n    /**\n     * @dev Sets `amount` as the allowance of `spender` over the `owner`s tokens.\n     *\n     * This is internal function is equivalent to `approve`, and can be used to\n     * e.g. set automatic allowances for certain subsystems, etc.\n     *\n     * Emits an `Approval` event.\n     *\n     * Requirements:\n     *\n     * - `owner` cannot be the zero address.\n     * - `spender` cannot be the zero address.\n     */\n    function _approve(address owner, address spender, uint256 value) internal {\n        require(owner != address(0), \"ERC20: approve from the zero address\");\n        require(spender != address(0), \"ERC20: approve to the zero address\");\n\n        _allowances[owner][spender] = value;\n        emit Approval(owner, spender, value);\n    }\n\n    /**\n     * @dev Destoys `amount` tokens from `account`.`amount` is then deducted\n     * from the caller's allowance.\n     *\n     * See `_burn` and `_approve`.\n     */\n    function _burnFrom(address account, uint256 amount) internal {\n        _burn(account, amount);\n        _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));\n    }\n}\n",
-  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC20/ERC20.sol",
+  "sourcePath": "/Users/obafs/Documents/Koda1/BLK_Micro/BLK_Micro/dApp-nodeJS-webpack/app/contracts/Libraries/token/ERC20/ERC20.sol",
   "ast": {
     "absolutePath": "project:/contracts/Libraries/token/ERC20/ERC20.sol",
     "exportedSymbols": {
@@ -727,7 +727,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10819,
+                          "referencedDeclaration": 10820,
                           "src": "2067:2:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -1157,7 +1157,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "2542:3:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1500,7 +1500,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "3222:3:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1596,7 +1596,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 10807,
+                                "referencedDeclaration": 10808,
                                 "src": "3254:3:47",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -1878,7 +1878,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "3806:3:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1962,7 +1962,7 @@
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "src": "3839:3:47",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
@@ -2242,7 +2242,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "4501:3:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2326,7 +2326,7 @@
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "src": "4534:3:47",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
@@ -2720,10 +2720,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "5167:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2874,10 +2874,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "5247:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3534,10 +3534,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "5837:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4156,10 +4156,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "6457:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4778,10 +4778,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "7200:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4932,10 +4932,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        10810,
-                        10811
+                        10811,
+                        10812
                       ],
-                      "referencedDeclaration": 10811,
+                      "referencedDeclaration": 10812,
                       "src": "7278:7:47",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5358,7 +5358,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 10807,
+                          "referencedDeclaration": 10808,
                           "src": "7743:3:47",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -5454,7 +5454,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 10807,
+                                "referencedDeclaration": 10808,
                                 "src": "7776:3:47",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -6316,7 +6316,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10819,
+                                  "referencedDeclaration": 10820,
                                   "type": "tx",
                                   "value": "tx"
                                 },
@@ -6781,7 +6781,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -7179,7 +7179,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -7295,7 +7295,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 10807,
+                                              "referencedDeclaration": 10808,
                                               "type": "msg",
                                               "value": "msg"
                                             },
@@ -7557,7 +7557,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -7668,7 +7668,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 10807,
+                                                  "referencedDeclaration": 10808,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
@@ -7949,7 +7949,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -8060,7 +8060,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 10807,
+                                                  "referencedDeclaration": 10808,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
@@ -8314,10 +8314,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -8472,10 +8472,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -9155,10 +9155,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -9822,10 +9822,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -10516,10 +10516,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -10674,10 +10674,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                10810,
-                                10811
+                                10811,
+                                10812
                               ],
-                              "referencedDeclaration": 10811,
+                              "referencedDeclaration": 10812,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -11260,7 +11260,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10807,
+                                  "referencedDeclaration": 10808,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11376,7 +11376,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 10807,
+                                              "referencedDeclaration": 10808,
                                               "type": "msg",
                                               "value": "msg"
                                             },
@@ -11454,7 +11454,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-15T03:42:33.924Z",
+  "updatedAt": "2022-02-06T00:33:10.739Z",
   "devdoc": {
     "details": "Implementation of the `IERC20` interface. * This implementation is agnostic to the way tokens are created. This means that a supply mechanism has to be added in a derived contract using `_mint`. For a generic mechanism see `ERC20Mintable`. * *For a detailed writeup see our guide [How to implement supply mechanisms](https://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226).* * We have followed general OpenZeppelin guidelines: functions revert instead of returning `false` on failure. This behavior is nonetheless conventional and does not conflict with the expectations of ERC20 applications. * Additionally, an `Approval` event is emitted on calls to `transferFrom`. This allows applications to reconstruct the allowance for all accounts just by listening to said events. Other implementations of the EIP may not emit these events, as it isn't required by the specification. * Finally, the non-standard `decreaseAllowance` and `increaseAllowance` functions have been added to mitigate the well-known issues around setting allowances. See `IERC20.approve`.",
     "methods": {

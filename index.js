@@ -45,12 +45,16 @@ app.get("/orders", async (req, res) => {
 //   }
 // });
 
-app.get("/balance", (req, res) => {
-  const { tkn, owner } = req.body;
-  tokenfactory
-    .balance(tkn, owner)
-    .then((bals) => res.send(bals.events.balz.returnValues[0]))
-    .catch((error) => console.error(error));
+app.get("/balance", async (req, res) => {
+  try {
+    const { tkn, owner } = req.body;
+    const bals = await tokenfactory.balance(tkn, owner);
+    // const balHold = await JSON.parse(bals);
+    res.send(bals);
+    console.log(bals);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.get("/name", (req, res) => {
@@ -67,11 +71,16 @@ app.get("/name", (req, res) => {
 // }
 //});
 
-app.get("/list", (req, res) => {
-  tokenfactory
-    .listToken()
-    .then((list) => res.send(list.events.listT.returnValues[0]))
-    .catch((err) => res.send(err));
+app.get("/list", async (req, res) => {
+  try {
+    // const { owner } = req.body;
+    const list = await tokenfactory.listToken();
+    // const balHold = await JSON.parse(bals);
+    res.send(list);
+    console.log(list);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 //const jwtCheck = jwt({
